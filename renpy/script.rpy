@@ -37,7 +37,7 @@ init python:
 # Игра начинается здесь:
 label start:
 
-    scene bg
+    scene bg lobby
     show etsuko 1 at left
     show natsuki 1 at right
     "О, коробки с едой!"
