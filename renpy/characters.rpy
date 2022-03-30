@@ -68,7 +68,7 @@ init:
     $ superKnownGlobal = False #<-- is it Phase 2 where superability existence is revealed
     $ show_profiles = False
     $ viewing = "Китамура Эцуко" #<-- the default character to show when the info screen is first called
-    $ main = anna   
+    $ main = natsuki   
         
 screen profile_screen:
      tag menu
@@ -136,4 +136,4 @@ screen profile_screen:
                        text "Симпатия:"  
                        bar value affection range affectionMax style "infoscreen_bar" 
       if pic != 'none':
-               add pic xalign 0.6 yalign 0.0 #Tinker with these numbers as needed to change where the image goes
+               add pic xalign 0.8 yalign 0.0 #Tinker with these numbers as needed to change where the image goes

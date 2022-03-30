@@ -7,6 +7,7 @@ define a = Character('Харута Анна', color="#c8ffc8", image='anna')
 init python:         
     xmax = config.screen_width
     ymax = config.screen_height    
+    
 #init -2 python:
     #declares a new style called "infoscreen"
     style.infoscreen = Style(style.default)
@@ -38,38 +39,38 @@ init python:
 label start:
 
     scene bg lobby
-    show etsuko 1 at left
-    show natsuki 1 at right
+    show etsuko smile at left
+    show anna serious at right
     "О, коробки с едой!"
     e "Откроем пиццу?"
-    n "Давай лучше онигири!"
+    a "Давай лучше онигири!"
     $ etsuko.likes=("Пицца")                
-    $ natsuki.likes=("Онигири")                        
-    $ natsuki.dislikes=("Пицца")                                    
+    $ anna.likes=("Онигири")                        
+    $ anna.dislikes=("Пицца")                                    
    
     "А ты как думаешь?"
     menu:
         "Пицца":
-            show etsuko 3 at left
-            show natsuki 2 at right
-            # $ natsuki.pic = "natsuki 2.png"
-            # $ etsuko.pic = "etsuko a 3.png"
+#            show etsuko 3 at left
+#            show anna 2 at right
+            $ anna.pic = "/char/anna serious.png"
+            $ etsuko.pic = "/char/etsuko smile.png"
+            $ natsuki.pic = "/char/natsuki smile.png"            
             $ etsuko.currentThoughts=("О даа, пицца!")
-            $ etsuko.affection += 20
-            $ natsuki.currentThoughts=("Да ладно...")
-            $ natsuki.affection -= 20
+            $ etsuko.affection += 5
+            $ anna.currentThoughts=("Да ладно...")
+            $ anna.affection -= 5
             e "Отлично!"
-            n "Опять эти чёрствые корочки и высохшие шампиньоны..."
+            a "Опять эти чёрствые корочки и высохшие шампиньоны..."
         "Онигири":
-            show etsuko 2 at left
-            show natsuki 6 at right
-            # $ natsuki.pic = "natsuki 6.png"
-            # $ etsuko.pic = "etsuko a 2.png"
-            $ natsuki.currentThoughts=("Я так люблю онигири!")
-            $ natsuki.affection += 20
+#            show etsuko 2 at left
+#            show natsuki 6 at right
+            # $ etsuko.pic = "etsuko 2.png"
+            $ anna.currentThoughts=("Я так люблю онигири!")
+            $ anna.affection += 10
             $ etsuko.currentThoughts=("Ну вооот...")
-            $ etsuko.affection -= 20
-            n "Скорее, за стол!"
+            $ etsuko.affection -= 10
+            a "Скорее, за стол!"
             e "Я бы лучше съела пиццу... Ну ладно, онигири тоже вкусные, пусть пицца останется на завтра."
     "М-м, вкусно!"        
     return
